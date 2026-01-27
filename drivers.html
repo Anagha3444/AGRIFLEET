@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver List - FarmRide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <h1> FarmRide</h1>
+            <p class="tagline">Registered Drivers</p>
+        </div>
+        
+        <!-- Driver List -->
+        <div class="content">
+            <div class="list-header">
+                <h2>Available Drivers</h2>
+                <a href="/" class="btn-secondary">
+                    <span></span> Add New Driver
+                </a>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading drivers...</p>
+            </div>
+            
+            <!-- Empty State (when no drivers) -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <div class="empty-icon"></div>
+                <h3>No Drivers Registered Yet</h3>
+                <p>Be the first to register as a driver!</p>
+                <a href="/" class="big-button">
+                    <span></span> Register Now
+                </a>
+            </div>
+            
+            <!-- Driver Cards Container -->
+            <div id="driver-list" class="driver-grid"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/drivers.js') }}"></script>
+</body>
+</html>

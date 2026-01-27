@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration - FarmRide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <h1> FarmRide</h1>
+            <p class="tagline">Driver Registration</p>
+        </div>
+        
+        <!-- Registration Form -->
+        <div class="content">
+            <div class="form-container">
+                <h2>Register as a Driver</h2>
+                <p class="form-subtitle">Fill in your details to start earning</p>
+                
+                <form id="register-form">
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter your full name"
+                            required
+                        />
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Enter your 10 digit phone number"
+                            pattern="[0-9]{10}"
+                            required
+                        />
+                    </div>
+                    
+                    <!-- Vehicle Type -->
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Type *</label>
+                        <select id="vehicle" name="vehicle" required>
+                            <option value="">Select your vehicle</option>
+                            <option value="Tata Ace">Tata Ace</option>
+                            <option value="Bolero Pickup">Bolero Pickup</option>
+                            <option value="Mahindra Jeep">Mahindra Jeep</option>
+                            <option value="Eicher Truck">Eicher Truck</option>
+                            <option value="Ashok Leyland">Ashok Leyland</option>
+                            <option value="Tractor">Tractor</option>
+                            <option value="Tempo">Tempo</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Vehicle Number -->
+                    <div class="form-group">
+                        <label for="vehicle_number">Vehicle Number *</label>
+                        <input 
+                            type="text" 
+                            id="vehicle_number" 
+                            name="vehicle_number" 
+                            placeholder="MH-15-AB-1234"
+                            required
+                        />
+                    </div>
+                    
+                    <!-- License Number -->
+                    <div class="form-group">
+                        <label for="license_number">License Number *</label>
+                        <input 
+                            type="text" 
+                            id="license_number" 
+                            name="license_number" 
+                            placeholder="Enter your license number"
+                            required
+                        />
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea 
+                            id="address" 
+                            name="address" 
+                            rows="3"
+                            placeholder="Enter your complete address"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="big-button" id="submit-btn">
+                        <span></span> Register Now
+                    </button>
+                </form>
+                
+                <!-- Success Message (hidden by default) -->
+                <div id="success-message" class="success-box" style="display: none;">
+                    <div class="success-icon"></div>
+                    <h3>Registration Successful!</h3>
+                    <p>Your driver profile has been created.</p>
+                    <a href="/drivers" class="link-button">View All Drivers</a>
+                </div>
+                
+                <!-- Already registered link -->
+                <div class="footer-links">
+                    <p>Already registered? <a href="/drivers">View Driver List</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>
